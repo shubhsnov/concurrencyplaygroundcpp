@@ -1,0 +1,4 @@
+The Memory Model
+    - atomic operations
+    - partial ordering of operations
+    - visible effects of operations
