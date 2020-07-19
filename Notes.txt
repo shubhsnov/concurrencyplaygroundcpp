@@ -1,0 +1,6 @@
+Thread Local Data
+    - Are exclusively owned by Thread
+    - Each thread has his own copy of the data
+    - Behave like static data
+        - will be created at the first usage
+        - are bound to the lifetime of the thread
