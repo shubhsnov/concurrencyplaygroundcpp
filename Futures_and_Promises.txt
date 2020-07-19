@@ -1,0 +1,22 @@
+Better for condition_variable4 like problems
+Futures and Promises
+    - are channels between and sender and receiver
+    - the producer puts value in the channel that the receiver is waiting for
+    - the sender is called a promise and the receiver is called an future
+
+
+int a = 2000;
+int b = 11;
+ - implicit with std::async
+    future<int> sumFuture = async([=]{ return a + b; });
+    sumFuture.get(); // 2011
+
+ - explicit with std::future and std::promises
+    void sum(promise<int>&& intProm, int x, int y) { // && to take in rvalue of the moved promise
+        intProm.set_value(x+y);
+    }
+
+    promise<int> sumPromise;
+    future<int> futRes = sumPromise.get_future();
+    thread sumThread(&sum, move(sumPromise), a, b); // promise can't be copied so we move actual object
+    futRes.get(); // 2011
