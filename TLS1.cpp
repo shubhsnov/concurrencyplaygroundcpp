@@ -7,7 +7,7 @@ using namespace std;
 mutex coutMutex;
 
 //Each thread has its own copy of thread local data
-thread_local  string s("hello from ");
+thread_local string s("hello from ");
 
 void addThreadLocal(string const& s2) {
     s += s2;

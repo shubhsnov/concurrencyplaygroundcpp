@@ -3,7 +3,15 @@
 #include <chrono>
 #include <mutex>
 using namespace std;
+/*
+Difference between std::lock_guard and std::unique_lock
 
+    One of the differences between std::lock_guard and std::unique_lock is that the programmer is able to unlock std::unique_lock, but she/he is not able to unlock std::lock_guard. lock_guard depends on the function scope, while unique_lock can be unlocked and locked again (especially if we pass it to condition variable)
+
+    The std::unique_lock has all of the functionalities of the std::lock_guard. Everything which is possible to do with std::lock_guard is also possible to do with std::unique_lock. So, when should we use std::lock_guard?
+
+    The rule of thumb is to always use std::lock_guard. But if we need some higher level functionalities, which are available by std::unique_lock, then we should use the std::unique_lock.
+*/
 struct CriticalData {
     mutex mut;
 };

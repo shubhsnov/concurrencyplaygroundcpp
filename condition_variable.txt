@@ -1,0 +1,4 @@
+We want to synchronize two threads
+    - via notifications
+    - one thread(producer) produces result which the other thread(consumer) is still waiting for
+    - the producer notifies one or more consumers
