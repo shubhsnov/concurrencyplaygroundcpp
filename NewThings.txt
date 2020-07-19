@@ -1,0 +1,12 @@
+Have a lockable property on a lock to check if it is in a locked state
+"async" returns a future, and the lambda set in async sets the promise internally.
+Promise and futures can be send across threads
+
+// Functional Programming in CPP
+std::transform -> map in JS
+std::remove_if -> filter in JS
+std::accumulate -> reduce in JS
+
+To Do: std::execution and std::terminate
+To Do: Co-routines (co_yield, co_wait, co_return)
+To Do: Can have a vector of threads having each sharing a variable. All threads can increase the variable. And then prints.
